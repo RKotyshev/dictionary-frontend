@@ -2,10 +2,14 @@
 const eslint = require("@eslint/js");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
+const stylisticJs = require('@stylistic/eslint-plugin-js');
 
 module.exports = tseslint.config(
   {
     files: ["**/*.ts"],
+    plugins: {
+      '@stylistic/js': stylisticJs,
+    },
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
@@ -30,6 +34,7 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
+      "@stylistic/js/max-len": ["error", { code: 100, tabWidth: 2 }],
     },
   },
   {
