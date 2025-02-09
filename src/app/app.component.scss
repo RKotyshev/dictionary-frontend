@@ -1,3 +1,23 @@
+@use "../styles/breakpoints" as *;
+
 span {
  color: var(--tui-text-positive);
+}
+
+.cardsList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  @media #{$tui-desktop-min} {
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  width: 200px;
+  background: var(--tui-background-accent-2-pressed);
 }

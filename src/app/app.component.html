@@ -1,3 +1,8 @@
 <tui-root>
   <span class="tui-text_h1">Plain text</span>
+<div class="cardsList">
+  @for(card of cardsCount(); track card.id; let i = $index) {
+    <div class="card">It's a card #{{i}}</div>
+  }
+</div>
 </tui-root>
