@@ -1,0 +1,25 @@
+@use "sass:string";
+
+$tui-media-retina: string.unquote('(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)');
+$tui-media-retina-mobile: string.unquote('(-webkit-min-device-pixel-ratio: 2) and (max-width: 37.4625em), (min-resolution: 192dpi) and (max-width: 37.4625em)');
+$tui-media-retina-tablet: string.unquote('(-webkit-min-device-pixel-ratio: 2) and (max-width: 63.9625em), (min-resolution: 192dpi) and (max-width: 63.9625em)');
+$tui-media-retina-desktop: string.unquote('(-webkit-min-device-pixel-ratio: 2) and (max-width: 84.9625em), (min-resolution: 192dpi) and (max-width: 84.9625em)');
+
+$tui-mobile: string.unquote('screen and (max-width: 47.9625em)');
+$tui-mobile-min: string.unquote('screen and (min-width: 22.5em)');
+$tui-mobile-interval: string.unquote('(min-width: 22.5em) and (max-width: 47.9625em)');
+
+$tui-tablet: string.unquote('screen and (max-width: 63.9625em)');
+$tui-tablet-min: string.unquote('screen and (min-width: 48em)');
+$tui-tablet-interval: string.unquote('(min-width: 48em) and (max-width: 63.9625em)');
+
+$tui-desktop: string.unquote('screen and (max-width: 79.9625em)');
+$tui-desktop-min: string.unquote('screen and (min-width: 64em)');
+$tui-desktop-interval: string.unquote('(min-width: 64em) and (max-width: 79.9625em)');
+
+$tui-desktop-lg-min: string.unquote('screen and (min-width: 80em)');
+
+$tui-touch: string.unquote('(hover: none) and (pointer: coarse)');
+$tui-stylus: string.unquote('(hover: none) and (pointer: fine)');
+$tui-pointer: string.unquote('(hover: hover) and (pointer: coarse)');
+$tui-mouse: string.unquote('(hover: hover) and (pointer: fine)');
