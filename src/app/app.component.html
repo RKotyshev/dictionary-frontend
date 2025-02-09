@@ -1,8 +1,36 @@
 <tui-root>
   <span class="tui-text_h1">Plain text</span>
-<div class="cardsList">
-  @for(card of cardsCount(); track card.id; let i = $index) {
-    <div class="card">It's a card #{{i}}</div>
-  }
-</div>
+  <div class="cardsList tui-space_top-5">
+    @for(card of cardsCount(); track card.id; let i = $index) {
+      <div class="card">It's a card #{{i}}</div>
+    }
+  </div>
+
+  <ul class="tui-list tui-list_large tui-space_top-10">
+    <li class="tui-list__item">Code Review ($ 10)</li>
+    <li class="tui-list__item">
+      The whole project refactoring ($ 1000)
+      <ul class="tui-list tui-list_linear tui-list_nested">
+        <li class="tui-list__item">Add auto prettier and linters on precommit ($ 50)</li>
+        <li class="tui-list__item">Rewrite to react and back ($ Infinity)</li>
+      </ul>
+    </li>
+    <li class="tui-list__item">
+      Live workshop from
+      <a
+        href="https://angular.institute/corporate"
+        rel="noreferrer"
+        target="_blank"
+        tuiLink
+      >
+        angular.institute
+      </a>
+      ($ 3000)
+      <ol class="tui-list tui-list_ordered tui-list_nested">
+        <li class="tui-list__item">Interactive samples</li>
+        <li class="tui-list__item">Case analysis</li>
+        <li class="tui-list__item">Angular knowledge that keeps on growing</li>
+      </ol>
+    </li>
+  </ul>
 </tui-root>
