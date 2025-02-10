@@ -1,2 +1,29 @@
-<tui-root>
+<tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null">
+  <app-sidebar-container>
+    <app-sidebar>
+      <div>sidebar works!</div>
+      <div>sidebar works!</div>
+      <div>sidebar works!</div>
+      <div>sidebar works!</div>
+      <div>sidebar works!</div>
+      <div>sidebar works!</div>
+      <button
+        tuiButton
+        type="button"
+        (click)="darkMode.set(!darkMode())"
+      >Toggle theme</button>
+      <div>sidebar works!</div>
+    </app-sidebar>
+
+    <app-sidebar-content>
+<!--      <router-outlet></router-outlet>-->
+      <div>sidebar-content works!</div>
+      <div>sidebar-content works!</div>
+      <div>sidebar-content works!</div>
+      <div>sidebar-content works!</div>
+      <div>sidebar-content works!</div>
+      <div>sidebar-content works!</div>
+      <div>sidebar-content works!</div>
+    </app-sidebar-content>
+  </app-sidebar-container>
 </tui-root>

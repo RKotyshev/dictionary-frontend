@@ -34,7 +34,7 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
-      "@stylistic/js/max-len": ["error", { code: 100, tabWidth: 2 }],
+      "@stylistic/js/max-len": ["error", { code: 120, tabWidth: 2 }],
     },
   },
   {
