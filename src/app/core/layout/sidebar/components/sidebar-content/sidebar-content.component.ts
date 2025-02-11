@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {TuiScrollbar} from '@taiga-ui/core';
 
 @Component({
-  selector: 'app-sidebar-content',
+  selector: 'df-sidebar-content',
   imports: [
     TuiScrollbar
   ],

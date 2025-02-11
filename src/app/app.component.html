@@ -1,6 +1,6 @@
 <tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null">
-  <app-sidebar-container>
-    <app-sidebar>
+  <df-sidebar-container>
+    <df-sidebar>
       <div>sidebar works!</div>
       <div>sidebar works!</div>
       <div>sidebar works!</div>
@@ -13,9 +13,9 @@
         (click)="darkMode.set(!darkMode())"
       >Toggle theme</button>
       <div>sidebar works!</div>
-    </app-sidebar>
+    </df-sidebar>
 
-    <app-sidebar-content>
+    <df-sidebar-content>
 <!--      <router-outlet></router-outlet>-->
       <div>sidebar-content works!</div>
       <div>sidebar-content works!</div>
@@ -24,6 +24,6 @@
       <div>sidebar-content works!</div>
       <div>sidebar-content works!</div>
       <div>sidebar-content works!</div>
-    </app-sidebar-content>
-  </app-sidebar-container>
+    </df-sidebar-content>
+  </df-sidebar-container>
 </tui-root>
