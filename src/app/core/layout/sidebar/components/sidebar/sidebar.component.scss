@@ -8,7 +8,19 @@
   border-right: 1px solid var(--tui-border-normal);
   //background-color: #a35555;
 }
+::ng-deep {
+  .t-content {
+    height: 100% !important;
+  }
+}
+
+tui-scrollbar {
+  height: 100%;
+}
 
 .sidebar-wrapper {
+  height: 100%;
   padding: 20px;
+  box-sizing: border-box;
 }
+
