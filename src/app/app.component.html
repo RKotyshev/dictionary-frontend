@@ -1,29 +1,19 @@
 <tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null">
   <df-sidebar-container>
     <df-sidebar>
-      <div>sidebar works!</div>
-      <div>sidebar works!</div>
-      <div>sidebar works!</div>
-      <div>sidebar works!</div>
-      <div>sidebar works!</div>
-      <div>sidebar works!</div>
-      <button
-        tuiButton
-        type="button"
-        (click)="darkMode.set(!darkMode())"
-      >Toggle theme</button>
-      <div>sidebar works!</div>
+      <df-main-nav></df-main-nav>
     </df-sidebar>
 
     <df-sidebar-content>
-<!--      <router-outlet></router-outlet>-->
-      <div>sidebar-content works!</div>
-      <div>sidebar-content works!</div>
-      <div>sidebar-content works!</div>
-      <div>sidebar-content works!</div>
-      <div>sidebar-content works!</div>
-      <div>sidebar-content works!</div>
-      <div>sidebar-content works!</div>
+      <router-outlet>
+        <div>sidebar-content works!</div>
+        <div>sidebar-content works!</div>
+        <div>sidebar-content works!</div>
+        <div>sidebar-content works!</div>
+        <div>sidebar-content works!</div>
+        <div>sidebar-content works!</div>
+        <div>sidebar-content works!</div>
+      </router-outlet>
     </df-sidebar-content>
   </df-sidebar-container>
 </tui-root>
