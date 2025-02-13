@@ -22,7 +22,7 @@ module.exports = tseslint.config(
         "error",
         {
           type: "attribute",
-          prefix: "df",
+          prefix: "app",
           style: "camelCase",
         },
       ],
@@ -30,34 +30,11 @@ module.exports = tseslint.config(
         "error",
         {
           type: "element",
-          prefix: "df",
+          prefix: "app",
           style: "kebab-case",
         },
       ],
-      "@stylistic/js/max-len": ["error",
-        { code: 120,
-          tabWidth: 2,
-        },
-      ],
-      "@typescript-eslint/explicit-member-accessibility": [
-        "error",
-        {
-          accessibility: "explicit",
-          overrides: {
-            accessors: "explicit",
-            constructors: "off",
-            methods: "explicit",
-            properties: "explicit",
-            parameterProperties: "explicit",
-          },
-        }
-      ],
-      "@typescript-eslint/no-empty-function": [
-        "error",
-        {
-          allow: ["constructors"],
-        }
-      ],
+      "@stylistic/js/max-len": ["error", { code: 100, tabWidth: 2 }],
     },
   },
   {
