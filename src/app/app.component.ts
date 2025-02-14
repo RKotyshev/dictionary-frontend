@@ -24,7 +24,7 @@ import { MainNavComponent } from './core/layout/components/main-nav/main-nav.com
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public title = 'dictionary-frontend';
+  public title = 'dictionaries-frontend';
 
   constructor() {}
 
