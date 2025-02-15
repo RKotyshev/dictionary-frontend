@@ -1,5 +1,9 @@
 <tui-scrollbar>
   <div class="sidebar-content-wrapper">
+    @if (caption()) {
+      <h1>{{ caption() }}</h1>
+    }
+
     <ng-content></ng-content>
   </div>
 </tui-scrollbar>

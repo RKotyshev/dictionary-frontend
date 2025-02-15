@@ -10,9 +10,15 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeContainerComponent,
+    data: {
+      caption: 'Home',
+    }
   },
   {
     path: 'dictionaries',
     loadChildren: () => import('./features/dictionaries/dictionary.routes'),
+    data: {
+      caption: 'Dictionaries',
+    }
   },
 ];
