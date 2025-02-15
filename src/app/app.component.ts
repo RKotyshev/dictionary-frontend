@@ -1,4 +1,4 @@
-import { TUI_DARK_MODE, TuiRoot } from "@taiga-ui/core";
+import { TuiRoot } from "@taiga-ui/core";
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
@@ -8,6 +8,7 @@ import { SidebarComponent } from './core/layout/sidebar/components/sidebar/sideb
 import { SidebarContentComponent } from './core/layout/sidebar/components/sidebar-content/sidebar-content.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MainNavComponent } from './core/layout/components/main-nav/main-nav.component';
+import { ThemeService } from './core/services/theme.service';
 
 @Component({
   selector: 'df-root',
@@ -26,7 +27,7 @@ import { MainNavComponent } from './core/layout/components/main-nav/main-nav.com
 export class AppComponent {
   public title = 'dictionaries-frontend';
 
-  constructor() {}
+  public themeService = inject(ThemeService);
 
-  protected readonly darkMode = inject(TUI_DARK_MODE);
+  constructor() {}
 }
