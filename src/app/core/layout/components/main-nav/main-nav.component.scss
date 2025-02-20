@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.main-nav__wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .main-nav__header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+
+  .main-nav__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    margin-top: 5rem;
+  }
+
+  .main-nav__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+
+    margin-top: 5rem;
+  }
+
+  [tuiAppearance][data-appearance='glass'], [tuiAppearance][data-appearance='action-grayscale'] {
+    color: var(--tui-text-primary-on-accent-1);
+    background: var(--tui-background-accent-1);
+
+    --tui-border-focus: var(--tui-text-primary);
+
+    &:hover {
+      color: var(--tui-background-accent-1);
+      background: var(--tui-background-neutral-1-hover);
+    }
+
+    &:active {
+      color: var(--tui-chart-categorical-08);
+      background: var(--tui-chart-categorical-10);
+    }
+  }
+}

@@ -1,2 +1,11 @@
-<tui-root>
+<tui-root [attr.tuiTheme]="themeService.currentTheme()">
+  <df-sidebar-container>
+    <df-sidebar>
+      <df-main-nav></df-main-nav>
+    </df-sidebar>
+
+    <df-sidebar-content>
+      <router-outlet></router-outlet>
+    </df-sidebar-content>
+  </df-sidebar-container>
 </tui-root>
