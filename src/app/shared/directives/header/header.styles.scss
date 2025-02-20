@@ -1,0 +1,98 @@
+[dfHeader] {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: content-box;
+  color: var(--tui-text-primary);
+  margin: 0;
+  text-align: start;
+
+  [dfTitle] {
+    flex-grow: 2;
+  }
+
+  [dfAccessories] {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    &:has([dfLink]) {
+      align-items: baseline;
+    }
+
+    &::before {
+      /* stylelint-disable-next-line */
+      content: '​';
+      visibility: hidden;
+    }
+  }
+
+  [dfSubtitle] {
+    font: var(--tui-font-text-m);
+    color: var(--tui-text-secondary);
+  }
+
+  [dfLink] {
+    font: var(--tui-font-text-m);
+  }
+
+  [dfCaption] {
+    font: var(--tui-font-text-s);
+    color: var(--tui-text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &[data-size='h1'] {
+    [dfTitle],
+    [dfAccessories] {
+      font: var(--tui-font-heading-1);
+    }
+  }
+
+  &[data-size='h2'] {
+    [dfTitle],
+    [dfAccessories] {
+      font: var(--tui-font-heading-2);
+    }
+  }
+
+  &[data-size='h3'] {
+    [dfTitle],
+    [dfAccessories] {
+      font: var(--tui-font-heading-3);
+    }
+  }
+
+  &[data-size='h4'] {
+    [dfTitle],
+    [dfAccessories] {
+      font: var(--tui-font-heading-4);
+    }
+  }
+
+  &[data-size='h5'] {
+    [dfTitle],
+    [dfAccessories] {
+      font: var(--tui-font-heading-5);
+    }
+  }
+
+  &[data-size='h6'] {
+    [dfTitle],
+    [dfAccessories] {
+      font: var(--tui-font-heading-6);
+    }
+  }
+
+
+
+  &[data-size='h1'],
+  &[data-size='h2'],
+  &[data-size='h3'] {
+    [dfSubtitle],
+    [dfLink] {
+      font: var(--tui-font-text-l);
+    }
+  }
+}
