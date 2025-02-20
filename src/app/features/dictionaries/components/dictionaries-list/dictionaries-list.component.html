@@ -1,1 +1,5 @@
 <p>dictionaries-list works!</p>
+
+@for(dictionary of dictionaries(); track dictionary.id) {
+  <df-dictionary [dictionary]="dictionary"></df-dictionary>
+}
