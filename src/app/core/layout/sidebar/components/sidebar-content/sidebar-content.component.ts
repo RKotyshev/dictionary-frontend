@@ -3,11 +3,15 @@ import { TuiScrollbar } from '@taiga-ui/core';
 import { ActivationEnd, Data, Router, Event } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map } from 'rxjs';
+import { HeaderDirective } from '../../../../../shared/directives/header/header.directive';
+import { TitleDirective } from '../../../../../shared/directives/title/title.directive';
 
 @Component({
   selector: 'df-sidebar-content',
   imports: [
-    TuiScrollbar
+    TuiScrollbar,
+    HeaderDirective,
+    TitleDirective
   ],
   templateUrl: './sidebar-content.component.html',
   styleUrl: './sidebar-content.component.scss'
