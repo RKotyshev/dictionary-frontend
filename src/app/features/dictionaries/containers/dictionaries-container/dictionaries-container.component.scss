@@ -1,0 +1,19 @@
+@use '../../../../../styles/breakpoints' as *;
+
+df-dictionaries-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  --dictionary-card-width: 100%;
+
+  @media #{$tui-desktop-lg-min} {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    --dictionary-card-width: 500px;
+    --dictionary-card-height: 200px;
+  }
+}
