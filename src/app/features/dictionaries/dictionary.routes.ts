@@ -8,7 +8,7 @@ const routes: Routes = [
     component: DictionariesContainerComponent,
   },
   {
-    path: ':dictionaryId',
+    path: ':id',
     component: DictionaryComponent,
   },
 ];
