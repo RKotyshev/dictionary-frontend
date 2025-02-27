@@ -8,6 +8,9 @@ import { dfHeaderSize } from '../../models/df-header-sizes';
   styleUrls: ['./header.styles.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'df-header',
+  }
 })
 class HeaderStylesComponent {}
 

@@ -7,6 +7,9 @@ import { dfWithStyles } from '../../utils/with-styles';
   styleUrls: ['./title.styles.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'df-title',
+  }
 })
 class TitleStylesComponent {}
 
