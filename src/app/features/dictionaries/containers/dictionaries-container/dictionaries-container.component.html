@@ -1,5 +1,5 @@
-<p>dictionary-container works!</p>
+<tui-loader [showLoader]="isLoading()" [overlay]="true" size="xl">
+  <p>dictionary-container works!</p>
 
-<df-dictionaries-list [dictionaries]="dictionariesList()"></df-dictionaries-list>
-
-<!--<router-outlet></router-outlet>-->
+  <df-dictionaries-list [dictionaries]="dictionariesList()"></df-dictionaries-list>
+</tui-loader>

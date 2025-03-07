@@ -38,7 +38,7 @@ export class DictionariesService {
     ];
 
     return of(dictionariesList).pipe(
-      delay(1000),
+      delay(1500),
     );
   }
 }

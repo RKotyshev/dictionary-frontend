@@ -1,0 +1,10 @@
+header {
+  flex-direction: column;
+}
+
+.dictionary-card {
+  width: var(--dictionary-card-width, auto);
+  height: var(--dictionary-card-height, auto);
+
+  cursor: pointer;
+}

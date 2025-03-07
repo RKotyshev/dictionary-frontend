@@ -1,11 +1,11 @@
 import { Component, input } from '@angular/core';
 import { Dictionary } from '../../models/dictionary.model';
-import { DictionaryComponent } from '../dictionary/dictionary.component';
+import { DictionaryCardComponent } from '../dictionary-card/dictionary-card.component';
 
 @Component({
   selector: 'df-dictionaries-list',
   imports: [
-    DictionaryComponent
+    DictionaryCardComponent
   ],
   templateUrl: './dictionaries-list.component.html',
   styleUrl: './dictionaries-list.component.scss'
