@@ -35,7 +35,8 @@ module.exports = tseslint.config(
         },
       ],
       "@stylistic/js/max-len": ["error",
-        { code: 120,
+        {
+          code: 120,
           tabWidth: 2,
         },
       ],
@@ -58,6 +59,7 @@ module.exports = tseslint.config(
           allow: ["constructors"],
         }
       ],
+      "@typescript-eslint/explicit-function-return-type": "error"
     },
   },
   {

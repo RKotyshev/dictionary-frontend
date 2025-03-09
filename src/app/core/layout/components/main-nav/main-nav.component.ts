@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { TUI_DARK_MODE, TuiButton } from '@taiga-ui/core';
+import { TuiButton } from '@taiga-ui/core';
 import { FormsModule } from '@angular/forms';
 import {RouterLink} from '@angular/router';
 import { ThemeService } from '../../../services/theme.service';
@@ -16,5 +16,4 @@ import { ThemeService } from '../../../services/theme.service';
 })
 export class MainNavComponent {
   public themeService = inject(ThemeService);
-  // protected readonly darkMode = inject(TUI_DARK_MODE);
 }

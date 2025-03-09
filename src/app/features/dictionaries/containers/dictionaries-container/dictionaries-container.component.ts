@@ -28,7 +28,7 @@ export class DictionariesContainerComponent implements OnInit {
 
   constructor() {}
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.dictionariesList = toSignal(
       this._dictionariesService.getDictionaries().pipe(
         finalize(() => this.isLoading.set(false)),

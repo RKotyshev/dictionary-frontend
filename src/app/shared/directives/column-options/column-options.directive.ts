@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   computed,
   Directive,
   inject,
@@ -17,7 +18,7 @@ import { ColumnWithOptions } from '../../../features/dictionaries/models/diction
     '[style.minWidth]': 'currentColumnOptions()?.["min-width"] || "auto"',
   }
 })
-export class ColumnOptionsDirective implements OnInit {
+export class ColumnOptionsDirective implements OnInit, AfterViewInit {
   public columnName = input.required<string>({ alias: 'dfColumnOptions'});
 
   public dfColumnOptionsFrom = input.required<ColumnWithOptions[]>();
@@ -36,11 +37,11 @@ export class ColumnOptionsDirective implements OnInit {
 
   constructor() { }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.viewContainerRef.createEmbeddedView(this.template);
   }
 
-  public ngAfterViewInit() {
+  public ngAfterViewInit(): void {
     const tableRowElement = this.template.elementRef.nativeElement.previousElementSibling as HTMLTableCellElement;
     if (tableRowElement && this.currentColumnOptions()) {
       console.log('tableRowElement: ', tableRowElement);
