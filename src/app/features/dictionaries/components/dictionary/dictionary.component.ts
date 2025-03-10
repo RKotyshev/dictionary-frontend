@@ -10,15 +10,16 @@ import {
 } from '@taiga-ui/addon-table';
 import { TuiTextareaModule } from '@taiga-ui/legacy';
 import { FormsModule } from '@angular/forms';
-import { TuiTextfieldComponent } from '@taiga-ui/core';
-import { TuiCheckbox, TuiInputNumber } from '@taiga-ui/kit';
+import { TuiButton, TuiDataList, TuiIcon, TuiTextfieldComponent } from '@taiga-ui/core';
+import { TuiActionBar, TuiCheckbox, TuiInputNumber } from '@taiga-ui/kit';
 import { NgClass, TitleCasePipe } from '@angular/common';
 import { ColumnWithOptions } from '../../models/dictionary.model';
 import { ColumnOptionsDirective } from '../../../../shared/directives/column-options/column-options.directive';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Word } from '../../../../shared/models/word.model';
 import { TuiCell } from '@taiga-ui/layout';
-import { tap } from 'rxjs';
+import { map } from 'rxjs';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'df-dictionary',
@@ -40,7 +41,11 @@ import { tap } from 'rxjs';
     ColumnOptionsDirective,
     TuiCell,
     TitleCasePipe,
-    TuiCheckbox
+    TuiCheckbox,
+    TuiActionBar,
+    TuiDataList,
+    TuiIcon,
+    TuiButton
   ],
   templateUrl: './dictionary.component.html',
   styleUrl: './dictionary.component.scss',
@@ -110,16 +115,25 @@ export class DictionaryComponent {
     },
   ])
 
-  public selection = new SelectionModel<Word>(true, [])
+  public selection = new SelectionModel<Word>(true, []);
+
+  public currentSelection = toSignal(this.selection.changed.pipe(map(()=> {
+    return this.selection.selected;
+  })), { initialValue: [] });
+
+  public open = computed(() => {
+    return !!this.currentSelection()?.length;
+  });
+
+  public isAllSelected = computed(() => {
+    return this.currentSelection()?.length === this.words().length
+  })
+
 
   constructor() {
-    this.selection.changed.pipe(tap(console.log)).subscribe();
-  }
-
-  public isAllSelected(): boolean {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.words().length;
-    return numSelected === numRows;
+    this.selection.changed.pipe(takeUntilDestroyed()).subscribe(() => {
+      console.log('current selection: ', this.selection.selected);
+    });
   }
 
   public toggleAllRows(): void {

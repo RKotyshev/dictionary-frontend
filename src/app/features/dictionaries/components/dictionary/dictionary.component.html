@@ -122,3 +122,27 @@
     }
   </tbody>
 </table>
+
+<tui-action-bar
+  *tuiActionBar="open()"
+>
+  <div>
+    <strong>Selected: {{ currentSelection()?.length ?? 0 }} of {{ words().length }}</strong>
+  </div>
+
+  <button
+    tuiButton
+    iconStart="@tui.replace"
+    type="button"
+  >Change location</button>
+  <button
+    tuiButton
+    iconStart="@tui.share"
+    type="button"
+  >Share</button>
+  <button
+    tuiButton
+    iconStart="@tui.trash"
+    type="button"
+  >Remove</button>
+</tui-action-bar>
