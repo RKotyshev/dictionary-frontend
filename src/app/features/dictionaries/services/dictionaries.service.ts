@@ -1,15 +1,21 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 import { Dictionary } from '../models/dictionary.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DictionariesService {
+  private http = inject(HttpClient);
 
   constructor() { }
 
   public getDictionaries(): Observable<Dictionary[]> {
+    this.http.get('/api/dictionaries').subscribe((data) => {
+      console.log('data from backend: ', data);
+    });
+
     const dictionariesList: Dictionary[] = [
       {
         id: 1,

@@ -20,6 +20,7 @@ import { Word } from '../../../../shared/models/word.model';
 import { TuiCell } from '@taiga-ui/layout';
 import { map } from 'rxjs';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { WordsTableComponent } from '../words-table/words-table.component';
 
 @Component({
   selector: 'df-dictionary',
@@ -45,7 +46,8 @@ import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
     TuiActionBar,
     TuiDataList,
     TuiIcon,
-    TuiButton
+    TuiButton,
+    WordsTableComponent
   ],
   templateUrl: './dictionary.component.html',
   styleUrl: './dictionary.component.scss',
@@ -53,6 +55,8 @@ import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 })
 export class DictionaryComponent {
   public options = signal({ updateOn: 'blur' } as const);
+
+  public selectedWords = signal<Word[]>([]);
 
   public columns = signal(['checkbox', 'id', 'english', 'russian', 'transcription', 'example', 'location']);
 
@@ -122,11 +126,11 @@ export class DictionaryComponent {
   })), { initialValue: [] });
 
   public open = computed(() => {
-    return !!this.currentSelection()?.length;
+    return !!this.selectedWords()?.length;
   });
 
   public isAllSelected = computed(() => {
-    return this.currentSelection()?.length === this.words().length
+    return this.currentSelection()?.length === this.words().length;
   })
 
 
@@ -148,5 +152,10 @@ export class DictionaryComponent {
 
   public onValueChange(event: unknown, key: unknown, currentWord: unknown): void {
     console.log('event: ', event, 'key: ', key, 'currentWord: ', currentWord);
+  }
+
+  public onSelectionChange(words: Word[]): void {
+    console.log('EVENT selection change', event);
+    this.selectedWords.set(words);
   }
 }

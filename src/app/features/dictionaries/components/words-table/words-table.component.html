@@ -1,0 +1,124 @@
+<table
+  tuiTable
+  [columns]="columns()"
+  size="l"
+>
+  <thead tuiThead>
+  <tr tuiThGroup style="width: 100%">
+    @for (column of columns(); track $index) {
+      @if (column === 'checkbox') {
+        <th
+          *dfColumnOptions="column; from columnsOptions()"
+          [resizable]="true"
+          tuiTh
+          [ngClass]="'col-'+ column"
+        >
+          <input
+            tuiCheckbox
+            ngModel
+            (change)="$event ? toggleAllRows() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()"
+            type="checkbox"
+          />
+        </th>
+      } @else {
+        <ng-template [tuiHead]="column">
+          <th
+            *dfColumnOptions="column; from columnsOptions()"
+            [resizable]="true"
+            tuiTh
+            [ngClass]="'col-'+ column"
+          >{{ column | titlecase}}</th>
+        </ng-template>
+      }
+    }
+  </tr>
+  </thead>
+
+  <tbody
+    tuiTbody
+    [data]="words()"
+  >
+    @for (word of words(); track word.id) {
+      <tr tuiTr>
+        <td
+          *tuiCell="'checkbox'"
+          tuiTd
+        >
+          <input
+            tuiCheckbox
+            ngModel
+            [checked]="selection.isSelected(word)"
+            (change)="$event ? selection.toggle(word) : null"
+            (click)="$event.stopPropagation()"
+            type="checkbox"
+          />
+        </td>
+        <td
+          tuiTd
+        >{{ word.id }}</td>
+        <td
+          *tuiCell="'english'"
+          tuiTd
+        >
+          <tui-textarea
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="word.english"
+            [ngModelOptions]="options()"
+            (ngModelChange)="onValueChange($event, 'english', word)"
+          ></tui-textarea>
+        </td>
+        <td
+          *tuiCell="'russian'"
+          tuiTd
+        >
+          <tui-textarea
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="word.russian"
+            [ngModelOptions]="options()"
+            (ngModelChange)="onValueChange($event, 'russian', word)"
+          ></tui-textarea>
+        </td>
+        <td
+          *tuiCell="'transcription'"
+          tuiTd
+        >
+          <tui-textarea
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="word.transcription"
+            [ngModelOptions]="options()"
+            (ngModelChange)="onValueChange($event, 'transcription', word)"
+          ></tui-textarea>
+        </td>
+        <td
+          *tuiCell="'example'"
+          tuiTd
+        >
+          <tui-textarea
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="word.example"
+            [ngModelOptions]="options()"
+            (ngModelChange)="onValueChange($event, 'example', word)"
+          ></tui-textarea>
+        </td>
+        <td
+          *tuiCell="'location'"
+          tuiTd
+        >
+          <tui-textarea
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="word.location"
+            [ngModelOptions]="options()"
+            (ngModelChange)="onValueChange($event, 'location', word)"
+          ></tui-textarea>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
